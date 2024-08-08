@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear Faza.</strong>
+                        <p>
+                            Hehehe sebelum nya maaf yaa udah suka elu, gw sebenernya udah suka lu dari kelas 10 awalnya cuman di ship" in sama yg lain eh beneran suka sama elu, gw bingung sebenarnya mau confes apa ga, gw takut canggung sama eluu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <!-- Partikel Bercahaya -->
+    <div class="particles"></div>
+
+    <!-- Lagu Autoplay -->
+    <audio id="myAudio" src="music.mp3"></audio>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const audio = document.getElementById('myAudio');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            if (envelope.classList.contains('flap')) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+
+        startParticles();
+    </script>
+</body>
+</html>
